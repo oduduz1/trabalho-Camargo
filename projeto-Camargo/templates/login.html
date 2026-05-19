@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="login-page">
+
+    <div class="login-box">
+
+        <div class="login-logo"></div>
+
+        <div class="login-title">
+            Login
+        </div>
+
+        <form action="/dashboard" class="login-form">
+
+            <input type="text" placeholder="Username">
+
+            <input type="password" placeholder="Password">
+
+            <button type="submit">
+                LOGIN
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

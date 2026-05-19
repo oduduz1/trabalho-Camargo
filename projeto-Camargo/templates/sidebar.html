@@ -1,0 +1,80 @@
+<div class="sidebar">
+
+    <div class="sidebar-top">
+
+        <div class="logo">
+            Maquitec
+        </div>
+
+        <div class="user-box">
+
+            <div class="user-info">
+
+                <div class="user-name">
+                    Usuário
+                </div>
+
+                <div class="user-role">
+                    Cargo
+                </div>
+
+            </div>
+
+            <div class="arrow">
+                >
+            </div>
+
+        </div>
+
+        <div class="menu-section">
+
+            <div class="menu-title">
+                Workspace
+            </div>
+
+            <div class="menu">
+
+                <a href="/dashboard"
+                   class="{% if active_page == 'dashboard' %}active{% endif %}">
+                    Dashboard
+                </a>
+
+                <a href="/maquinas-alugadas"
+                   class="{% if active_page == 'maquinas_alugadas' %}active{% endif %}">
+                    Máquinas Alugadas
+                </a>
+
+                <a href="/maquinas-estoque"
+                   class="{% if active_page == 'maquinas_estoque' %}active{% endif %}">
+                    Máquinas No Estoque
+                </a>
+
+                <a href="/cadastro"
+                  class="{% if active_page == 'cadastro' %}active{% endif %}">
+                   Cadastro
+                </a>
+
+                <a href="/novo-aluguel"
+                   class="{% if active_page == 'novo_aluguel' %}active{% endif %}">
+                    Novo Aluguel
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="test-box">
+
+        <strong>
+            Software em Teste
+        </strong>
+
+        <br>
+
+        Esse software está em fase de teste
+
+    </div>
+
+</div>

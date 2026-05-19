@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Home</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    {% include 'sidebar.html' %}
+
+    <div class="content">
+
+        <div class="top-title">
+            Home
+        </div>
+
+        <div class="page-title">
+            Últimos Alugueis
+        </div>
+
+        <div class="cards">
+
+            {% for aluguel in alugueis %}
+
+            <div class="card">
+
+                <div class="card-header">
+
+                    <div class="client-name">
+                        Nome do Cliente
+                    </div>
+
+                    {% if aluguel.status_pagamento == 'Pago' %}
+                        <div class="status pago">
+                            Pago
+                        </div>
+                    {% else %}
+                        <div class="status pendente">
+                            Pendente
+                        </div>
+                    {% endif %}
+
+                </div>
+
+                <div class="machine-box">
+
+                    <div class="machine-title">
+                        Máquina Alugada
+                    </div>
+
+                    <div class="machine-info">
+                        Data do Aluguel
+                    </div>
+
+                    <div class="machine-info">
+                        Quanto Tempo Foi Alugado
+                    </div>
+
+                    <div class="machine-info">
+                        Quando Termina o Aluguel
+                    </div>
+
+                </div>
+
+                <div class="card-line"></div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+<!-- OVERLAY -->
+
+<div class="overlay" id="overlay"></div>
+
+<!-- MODAL CADASTRO -->
+
+<div class="cadastro-modal" id="cadastroModal">
+
+    <!-- LEFT -->
+
+    <div class="cadastro-left">
+
+        <div class="cadastro-title">
+            Cadastro
+        </div>
+
+        <!-- TABS -->
+
+        <div class="cadastro-tabs">
+
+            <button class="tab active"
+                    id="clienteTab">
+                Cliente
+            </button>
+
+            <button class="tab"
+                    id="maquinaTab">
+                Máquina
+            </button>
+
+        </div>
+
+        <!-- BOX -->
+
+        <div class="cadastro-box">
+
+            <div class="cadastro-box-title">
+                Clientes
+            </div>
+
+            <button class="cadastro-option"
+                    id="novoCadastro">
+                Cadastrar novo
+            </button>
+
+            <button class="cadastro-option">
+                Alterar Existente
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT DRAWER -->
+
+    <div class="cadastro-right"
+         id="cadastroDrawer">
+
+        <div class="drawer-title">
+            Cadastro de Novo Cliente
+        </div>
+
+        <div class="drawer-form">
+
+            <div class="input-group">
+
+                <label>
+                    Nome Cliente
+                </label>
+
+                <input type="text">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+                    CNPJ
+                </label>
+
+                <input type="text">
+
+            </div>
+
+            <div class="input-group">
+
+                <label>
+                    Responsável
+                </label>
+
+                <input type="text">
+
+            </div>
+
+            <button class="finish-btn">
+                Finalizar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

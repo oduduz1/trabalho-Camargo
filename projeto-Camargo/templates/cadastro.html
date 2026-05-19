@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Cadastro</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    {% include 'sidebar.html' %}
+
+    <!-- CONTENT -->
+
+    <div class="content cadastro-page">
+
+        <!-- LEFT -->
+
+        <div class="cadastro-left-page">
+
+            <div class="top-title">
+                Máquinas Alugadas
+            </div>
+
+            <div class="page-title cadastro-page-title">
+                Cadastro
+            </div>
+
+            <!-- TABS -->
+
+            <div class="cadastro-tabs">
+
+                <button class="tab active"
+                        id="clienteBtn">
+
+                    Cliente
+
+                </button>
+
+                <button class="tab"
+                        id="maquinaBtn">
+
+                    Máquina
+
+                </button>
+
+            </div>
+
+            <!-- BOX -->
+
+            <div class="cadastro-box">
+
+                <div class="cadastro-box-title"
+                     id="cadastroBoxTitle">
+
+                    Clientes
+
+                </div>
+
+                <!-- NOVO -->
+
+                <button class="cadastro-option"
+                        id="novoCadastro">
+
+                    Cadastrar novo
+
+                </button>
+
+                <!-- ALTERAR -->
+
+                <button class="cadastro-option"
+                        id="alterarCadastro">
+
+                    Alterar Existente
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- OVERLAY -->
+
+        <div class="cadastro-overlay"></div>
+
+        <!-- DRAWER -->
+
+        <div class="cadastro-drawer"
+             id="cadastroDrawer">
+
+            <div class="drawer-title"
+                 id="drawerTitle">
+
+                Cadastro de Novo Cliente
+
+            </div>
+
+            <div class="drawer-form">
+
+                <!-- SELECT EXISTENTE -->
+
+                <div class="input-group hidden"
+                     id="selectExistenteGroup">
+
+                    <label id="selectLabel">
+                        Selecionar Cliente
+                    </label>
+
+                    <select>
+
+                        <option>
+                            Construtora Alpha
+                        </option>
+
+                        <option>
+                            Terraplanagem Beta
+                        </option>
+
+                        <option>
+                            Engenharia Sigma
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- INPUT 1 -->
+
+                <div class="input-group">
+
+                    <label id="label1">
+                        Nome Cliente
+                    </label>
+
+                    <input type="text">
+
+                </div>
+
+                <!-- INPUT 2 -->
+
+                <div class="input-group">
+
+                    <label id="label2">
+                        CNPJ
+                    </label>
+
+                    <input type="text">
+
+                </div>
+
+                <!-- INPUT 3 -->
+
+                <div class="input-group">
+
+                    <label id="label3">
+                        Responsável
+                    </label>
+
+                    <input type="text">
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <button class="finish-btn">
+
+                    Finalizar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>

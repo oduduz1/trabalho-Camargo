@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Máquinas Alugadas</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    {% include 'sidebar.html' %}
+
+    <div class="content">
+
+        <div class="top-title">
+            Máquinas Alugadas
+        </div>
+
+        <div class="page-title">
+            Alugueis
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Client Id</th>
+                        <th>Client Name</th>
+                        <th>Máquina Alugada</th>
+                        <th>Data do Aluguel</th>
+                        <th>Data Fim do Aluguel</th>
+                        <th>Status Do Pagamento</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for aluguel in alugueis %}
+
+                    <tr>
+
+                        <td>1</td>
+
+                        <td>
+                            {{ aluguel.cliente }}
+                        </td>
+
+                        <td>
+                            {{ aluguel.maquina }}
+                        </td>
+
+                        <td>
+                            {{ aluguel.data_inicio }}
+                        </td>
+
+                        <td>
+                            {{ aluguel.data_fim }}
+                        </td>
+
+                        <td>
+
+                            {% if aluguel.status_pagamento == 'Pago' %}
+                                <div class="status pago">
+                                    Pago
+                                </div>
+                            {% else %}
+                                <div class="status pendente">
+                                    Pendente
+                                </div>
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+            <div class="empty-space"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

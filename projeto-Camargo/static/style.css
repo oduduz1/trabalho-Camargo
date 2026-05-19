@@ -1,0 +1,703 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter', sans-serif;
+}
+
+body{
+    background:#f7f7f7;
+}
+
+/* ================= LAYOUT ================= */
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    width:230px;
+    background:#ffffff;
+    border-right:1px solid #ececec;
+    padding:25px 18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.sidebar-top{
+    display:flex;
+    flex-direction:column;
+}
+
+.logo{
+    font-size:14px;
+    font-weight:600;
+    color:#444;
+    margin-left:8px;
+    margin-bottom:25px;
+}
+
+/* USER BOX */
+
+.user-box{
+    width:100%;
+    height:48px;
+    border:1px solid #e5e5e5;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 15px;
+    margin-bottom:20px;
+}
+
+.user-info{
+    display:flex;
+    flex-direction:column;
+}
+
+.user-name{
+    font-size:12px;
+    font-weight:600;
+    color:#666;
+}
+
+.user-role{
+    font-size:11px;
+    color:#b0b0b0;
+}
+
+.arrow{
+    font-size:18px;
+    font-weight:bold;
+    color:#444;
+}
+
+/* MENU */
+
+.menu-section{
+    border-top:1px solid #ececec;
+    padding-top:18px;
+}
+
+.menu-title{
+    color:#a0a0a0;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#666;
+    font-size:14px;
+    padding:10px 12px;
+    border-radius:8px;
+}
+
+.menu a:hover{
+    background:#f2f2f2;
+}
+
+.menu .active{
+    background:#f2f2f2;
+}
+
+/* SOFTWARE BOX */
+
+.test-box{
+    width:100%;
+    border:1px solid #dcdcdc;
+    border-radius:10px;
+    padding:14px;
+    font-size:12px;
+    line-height:22px;
+    color:#555;
+}
+
+.test-box strong{
+    color:#333;
+}
+
+/* ================= CONTENT ================= */
+
+.content{
+    flex:1;
+    padding:28px 32px;
+}
+
+.top-title{
+    font-size:12px;
+    color:#555;
+    margin-bottom:45px;
+}
+
+.page-title{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:35px;
+    color:#111;
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:flex;
+    gap:25px;
+}
+
+.card{
+    width:340px;
+    height:315px;
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    padding:22px;
+}
+
+.card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #ececec;
+    padding-bottom:12px;
+}
+
+.client-name{
+    font-size:13px;
+    color:#555;
+}
+
+.status{
+    font-size:10px;
+    padding:4px 12px;
+    border-radius:4px;
+    border:1px solid;
+}
+
+.pago{
+    color:#97b93c;
+    border-color:#b5d35c;
+}
+
+.pendente{
+    color:#ff4d4d;
+    border-color:#ff4d4d;
+}
+
+.machine-box{
+    width:140px;
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    padding:12px;
+    margin-top:22px;
+    line-height:22px;
+}
+
+.machine-title{
+    font-size:14px;
+    font-weight:700;
+    color:#555;
+}
+
+.machine-info{
+    font-size:11px;
+    color:#777;
+}
+
+.card-line{
+    width:100%;
+    height:1px;
+    background:#ececec;
+    margin-top:18px;
+}
+
+/* ================= TABLE ================= */
+
+.table-wrapper{
+    width:100%;
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+thead{
+    background:#fafafa;
+}
+
+th{
+    font-size:12px;
+    color:#777;
+    font-weight:500;
+    height:42px;
+    border-bottom:1px solid #ececec;
+    border-right:1px solid #ececec;
+}
+
+td{
+    height:55px;
+    text-align:center;
+    border-right:1px solid #ececec;
+    border-bottom:1px solid #ececec;
+    font-size:13px;
+    color:#333;
+    font-weight:600;
+}
+
+.empty-space{
+    height:260px;
+}
+
+/* ================= LOGIN ================= */
+
+.login-page{
+    width:100%;
+    height:100vh;
+    background:#f7f7f7;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.login-page::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#ececec;
+    transform:rotate(35deg);
+    left:-320px;
+    top:-150px;
+}
+
+.login-page::after{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#ececec;
+    transform:rotate(35deg);
+    right:-320px;
+    bottom:-220px;
+}
+
+.login-box{
+    width:420px;
+    background:#fff;
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    padding:28px;
+    position:relative;
+    z-index:2;
+}
+
+.login-logo{
+    width:35px;
+    height:35px;
+    background:#dcdcdc;
+    margin:auto;
+    margin-bottom:10px;
+}
+
+.login-title{
+    text-align:center;
+    color:#888;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.login-form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.login-form input{
+    height:38px;
+    border:1px solid #e5e5e5;
+    border-radius:7px;
+    padding-left:12px;
+    font-size:12px;
+    outline:none;
+}
+
+.login-form button{
+    height:38px;
+    border:none;
+    border-radius:8px;
+    background:#1d49ad;
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    cursor:pointer;
+}
+/* ================= OVERLAY ================= */
+
+.overlay{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:rgba(255,255,255,0.25);
+    backdrop-filter:blur(6px);
+    top:0;
+    left:0;
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s;
+    z-index:90;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ================= MODAL ================= */
+
+.cadastro-modal{
+    position:fixed;
+    top:0;
+    right:-950px;
+    width:950px;
+    height:100vh;
+    background:#f7f7f7;
+    display:flex;
+    transition:0.35s ease;
+    z-index:100;
+    border-left:1px solid #ececec;
+}
+
+.cadastro-modal.active{
+    right:0;
+}
+
+/* LEFT */
+
+.cadastro-left{
+    width:380px;
+    padding:40px 32px;
+}
+
+.cadastro-title{
+    font-size:28px;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.cadastro-tabs{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.tab{
+    width:90px;
+    height:34px;
+    border:none;
+    border-radius:8px;
+    background:#fff;
+    border:1px solid #ececec;
+    font-size:12px;
+    cursor:pointer;
+}
+
+.tab.active{
+    background:#1d49ad;
+    color:#fff;
+}
+
+.cadastro-box{
+    width:100%;
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.cadastro-box-title{
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    color:#666;
+    border-bottom:1px solid #ececec;
+}
+
+.cadastro-option{
+    width:85%;
+    height:45px;
+    border:1px solid #e5e5e5;
+    border-radius:12px;
+    background:#fff;
+    margin:18px auto;
+    display:block;
+    cursor:pointer;
+    font-size:13px;
+    color:#666;
+}
+
+/* RIGHT */
+
+.cadastro-right{
+    flex:1;
+    background:#fff;
+    border-left:1px solid #ececec;
+    padding:30px 45px;
+}
+
+.drawer-title{
+    text-align:center;
+    font-size:15px;
+    color:#666;
+    margin-bottom:55px;
+}
+
+.drawer-form{
+    width:100%;
+}
+
+.input-group{
+    margin-bottom:32px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:12px;
+    font-size:13px;
+    color:#777;
+}
+
+.input-group input{
+    width:100%;
+    border:none;
+    border-bottom:1px solid #e5e5e5;
+    background:none;
+    height:35px;
+    outline:none;
+}
+
+.finish-btn{
+    width:90px;
+    height:36px;
+    border:none;
+    border-radius:8px;
+    background:#1d49ad;
+    color:#fff;
+    font-size:11px;
+    cursor:pointer;
+    display:block;
+    margin:40px auto;
+}
+/* ================= CADASTRO PAGE ================= */
+
+.cadastro-page{
+    display:flex;
+    position:relative;
+    padding:0;
+    overflow:hidden;
+}
+
+.cadastro-left-page{
+    width:60%;
+    padding:35px;
+    position:relative;
+    z-index:2;
+}
+
+.cadastro-page-title{
+    font-size:34px;
+    margin-top:45px;
+    margin-bottom:20px;
+}
+
+/* OVERLAY */
+
+.cadastro-overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0.35);
+    backdrop-filter:blur(5px);
+    top:0;
+    left:0;
+    z-index:1;
+}
+
+/* DRAWER */
+
+.cadastro-drawer{
+    width:420px;
+    height:100vh;
+    background:#fff;
+    border-left:1px solid #ececec;
+    padding:28px 35px;
+    position:relative;
+    z-index:2;
+}
+
+/* TABS */
+
+.cadastro-tabs{
+    display:flex;
+    gap:8px;
+    margin-bottom:18px;
+}
+
+.tab{
+    width:60px;
+    height:28px;
+    border:none;
+    border-radius:8px;
+    font-size:10px;
+    cursor:pointer;
+    background:#fff;
+    border:1px solid #ececec;
+    color:#777;
+}
+
+.tab.active{
+    background:#1d49ad;
+    color:#fff;
+}
+
+/* BOX */
+
+.cadastro-box{
+    width:285px;
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.cadastro-box-title{
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-bottom:1px solid #ececec;
+    font-size:13px;
+    color:#777;
+}
+
+.cadastro-option{
+    width:88%;
+    height:42px;
+    margin:15px auto;
+    display:block;
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    background:#fff;
+    cursor:pointer;
+    color:#666;
+}
+
+/* DRAWER */
+
+.drawer-title{
+    text-align:center;
+    font-size:14px;
+    color:#666;
+    margin-bottom:50px;
+}
+
+.drawer-form{
+    width:100%;
+}
+
+.input-group{
+    margin-bottom:30px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:12px;
+    color:#777;
+    font-size:13px;
+}
+
+.input-group input{
+    width:100%;
+    height:35px;
+    border:none;
+    border-bottom:1px solid #ececec;
+    outline:none;
+    background:none;
+}
+
+.finish-btn{
+    width:85px;
+    height:34px;
+    border:none;
+    border-radius:8px;
+    background:#1d49ad;
+    color:#fff;
+    font-size:11px;
+    display:block;
+    margin:40px auto;
+    cursor:pointer;
+}
+/* ================= DRAWER HIDDEN ================= */
+
+.cadastro-drawer{
+    position:fixed;
+    right:-450px;
+    top:0;
+    transition:0.35s ease;
+}
+
+.cadastro-drawer.active{
+    right:0;
+}
+
+/* OVERLAY */
+
+.cadastro-overlay{
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s;
+}
+
+.cadastro-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* HIDDEN */
+
+.hidden{
+    display:none;
+}
+
+/* SELECT */
+
+.input-group select{
+    width:100%;
+    height:38px;
+    border:1px solid #ececec;
+    border-radius:8px;
+    padding:0 10px;
+    outline:none;
+    background:#fff;
+    color:#555;
+}
