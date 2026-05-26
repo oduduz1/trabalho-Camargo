@@ -22,23 +22,37 @@
             Máquinas Alugadas
         </div>
 
-        <div class="page-title">
-            Alugueis
+        <!-- HEADER -->
+
+        <div class="table-header">
+
+            <div class="page-title">
+                Aluguéis
+            </div>
+
+            <button class="new-button" id="openDrawer">
+                Novo
+            </button>
+
         </div>
+
+        <!-- TABLE -->
 
         <div class="table-wrapper">
 
             <table>
 
                 <thead>
+
                     <tr>
                         <th>Client Id</th>
                         <th>Client Name</th>
-                        <th>Máquina Alugada</th>
-                        <th>Data do Aluguel</th>
-                        <th>Data Fim do Aluguel</th>
-                        <th>Status Do Pagamento</th>
+                        <th>Máquina</th>
+                        <th>Data Início</th>
+                        <th>Data Fim</th>
+                        <th></th>
                     </tr>
+
                 </thead>
 
                 <tbody>
@@ -47,35 +61,21 @@
 
                     <tr>
 
-                        <td>1</td>
+                        <td>{{ aluguel.id }}</td>
 
-                        <td>
-                            {{ aluguel.cliente }}
-                        </td>
+                        <td>{{ aluguel.cliente }}</td>
 
-                        <td>
-                            {{ aluguel.maquina }}
-                        </td>
+                        <td>{{ aluguel.maquina }}</td>
 
-                        <td>
-                            {{ aluguel.data_inicio }}
-                        </td>
+                        <td>{{ aluguel.data_inicio }}</td>
 
-                        <td>
-                            {{ aluguel.data_fim }}
-                        </td>
+                        <td>{{ aluguel.data_fim }}</td>
 
-                        <td>
+                        <td class="delete-column">
 
-                            {% if aluguel.status_pagamento == 'Pago' %}
-                                <div class="status pago">
-                                    Pago
-                                </div>
-                            {% else %}
-                                <div class="status pendente">
-                                    Pendente
-                                </div>
-                            {% endif %}
+                            <button class="delete-btn">
+                                ×
+                            </button>
 
                         </td>
 
@@ -94,6 +94,113 @@
     </div>
 
 </div>
+
+<!-- OVERLAY -->
+
+<div class="rent-overlay" id="rentOverlay"></div>
+
+<!-- DRAWER -->
+
+<div class="rent-drawer" id="rentDrawer">
+
+    <div class="rent-top">
+
+        <div class="rent-title">
+            Novo Aluguel
+        </div>
+
+        <button class="rent-close" id="rentClose">
+            ×
+        </button>
+
+    </div>
+
+    <form class="rent-form">
+
+        <div class="rent-group">
+
+            <label>Cliente</label>
+
+            <input type="text"
+                   placeholder="Digite o nome do cliente">
+
+        </div>
+
+        <div class="rent-group">
+
+            <label>Máquina</label>
+
+            <select>
+
+                <option selected disabled>
+                    Selecione uma máquina
+                </option>
+
+                {% for maquina in maquinas %}
+
+                <option>
+                    {{ maquina.nome }}
+                </option>
+
+                {% endfor %}
+
+            </select>
+
+        </div>
+
+        <div class="rent-group">
+
+            <label>Data Início</label>
+
+            <input type="date">
+
+        </div>
+
+        <div class="rent-group">
+
+            <label>Data Fim</label>
+
+            <input type="date">
+
+        </div>
+
+        <button class="rent-save">
+            Salvar
+        </button>
+
+    </form>
+
+</div>
+
+<!-- DELETE MODAL -->
+
+<div class="delete-overlay" id="deleteOverlay"></div>
+
+<div class="delete-modal" id="deleteModal">
+
+    <div class="delete-title">
+        AVISO
+    </div>
+
+    <div class="delete-message">
+        Deseja apagar esse aluguel?
+    </div>
+
+    <div class="delete-actions">
+
+        <button class="cancel-delete">
+            Não
+        </button>
+
+        <button class="confirm-delete">
+            Sim
+        </button>
+
+    </div>
+
+</div>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
 
 </body>
 </html>
